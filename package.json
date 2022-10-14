@@ -1,0 +1,21 @@
+{
+  "name": "vouch-registry",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": "https://github.com/twilson63/vouch-registry.git",
+  "author": "Tom Wilson <tom@hyper.io>",
+  "license": "MIT",
+  "dependencies": {
+    "warp-contracts": "^1.2.13"
+  },
+  "devDependencies": {
+    "arlocal": "^1.1.58",
+    "arweave": "^1.11.6",
+    "ramda": "^0.28.0",
+    "uvu": "^0.5.6"
+  },
+  "scripts": {
+    "test": "uvu tests"
+  }
+}
