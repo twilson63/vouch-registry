@@ -16,6 +16,7 @@
     "uvu": "^0.5.6"
   },
   "scripts": {
-    "test": "uvu tests"
+    "test": "uvu tests",
+    "deploy": "node deploy.js"
   }
 }

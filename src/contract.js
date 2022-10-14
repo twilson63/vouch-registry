@@ -1,4 +1,4 @@
-const functions = { register, evolve }
+const functions = { register, evolve, unregister }
 
 const VOUCHDAO = 'ZGaL5DOMIYRw9YHZ_NZ2JoIjST1QwhiD6T1jePH381I'
 
@@ -25,6 +25,18 @@ async function register(state, { input, caller }) {
   }
   return { state }
 
+}
+
+async function unregister(state, { input, caller }) {
+  const { address, transaction, timestamp } = input
+  ContractAssert(address.length === 43, 'Address is not valid!')
+  ContractAssert(transaction.length === 43, 'Transaction is not valid!')
+
+  // verify caller is from an approved vouchDao service
+  if (await verified(caller)) {
+    state.registry[address + ':' + caller] = null
+  }
+  return { state }
 }
 
 function evolve(state, action) {
